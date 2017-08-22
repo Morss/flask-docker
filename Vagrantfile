@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-    cd /vagrant
+    cd /vagrant/flaskapp
     docker build -t flaskapp .
     docker run -d -P flaskapp
     docker ps
