@@ -9,12 +9,14 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-    cd /vagrant/flaskapp
-    docker build -t flaskapp .
-    docker run -d -P flaskapp
+    docker rm -f `docker ps -aq`
+    docker build -t flaskapp /vagrant/flaskapp
+    docker build -t frontend /vagrant/frontend
+    docker run -d -P --name flaskapp flaskapp 
+    docker run -d -P --name frontend --link flaskapp:flaskapp frontend 
     docker ps
   SHELL
-  
+
   config.vm.define "docker-host" do |host|
       host.vm.network :private_network, :ip => '192.168.59.200'
   end
