@@ -12,8 +12,8 @@ Vagrant.configure("2") do |config|
     docker rm -f `docker ps -aq`
     docker build -t flaskapp /vagrant/flaskapp
     docker build -t frontend /vagrant/frontend
-    docker run -d -P --name flaskapp flaskapp 
-    docker run -d -P --name frontend --link flaskapp:flaskapp frontend 
+    docker run -d -p 8081:80 --name flaskapp flaskapp 
+    docker run -d -p 8080:80 --name frontend --link flaskapp:flaskapp frontend 
     docker ps
   SHELL
 
