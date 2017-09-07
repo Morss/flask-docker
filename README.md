@@ -1,5 +1,5 @@
 # flask-docker
-Example code to run a python flask app in a docker container. To be used as a jump off point for other projects.
+Frontend and API server configuration in Vagrant/Docker. To be used as a jump off point for other projects.
 
 
 ### With Vagrant
