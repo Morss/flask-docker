@@ -3,7 +3,7 @@ Frontend and API server configuration in Vagrant/Docker. To be used as a jump of
 
 
 ### With Vagrant
-With vagrant you can boot up a vm, build and run the image with one command:
+With Vagrant you can boot up a VM, build and run the image with one command. To do this you'll need Vagrant installed with a VirtualBox backend.
 ```
 $ vagrant up
 ```
